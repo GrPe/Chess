@@ -7,12 +7,21 @@ public class GameMaster : MonoBehaviour
     [SerializeField] private Board board;
     private Pawn selectedPawn = null;
 
+    private bool white = true;
+
     private void Update()
     {
-        SelectPawn();
+        if(white)
+        {
+            PlayerWhiteSelect();
+        }
+        else
+        {
+            BlackPlayerSelect();
+        }
     }
 
-    private void SelectPawn()
+    private void PlayerWhiteSelect()
     {
         if(Input.GetMouseButtonDown(0))
         {
@@ -38,6 +47,7 @@ public class GameMaster : MonoBehaviour
                         selectedPawn = null;
                         RemovePossibleMovement();
                     }
+                    white = !white;
                 }
                 else if(hit.transform.tag == "BlackPawn" && selectedPawn != null)
                 {
@@ -53,6 +63,60 @@ public class GameMaster : MonoBehaviour
                         selectedPawn = null;
                         RemovePossibleMovement();
                     }
+                    white = !white;
+                }
+                else
+                {
+                    selectedPawn = null;
+                    RemovePossibleMovement();
+                }
+            }
+        }
+    }
+
+    private void BlackPlayerSelect()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                if (hit.transform.tag == "BlackPawn")
+                {
+                    if (selectedPawn != null) RemovePossibleMovement();
+                    selectedPawn = hit.transform.GetComponent<Pawn>();
+                    DrawPossibleMovement();
+                }
+                else if (hit.transform.tag == "FreeTile" && selectedPawn != null)
+                {
+                    var tile = hit.transform.GetComponent<Tile>();
+                    if (tile.EnableMove == true)
+                    {
+                        board.pawns[tile.x, tile.y] = selectedPawn;
+                        board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
+                        board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
+                        board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
+                        board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
+                        selectedPawn = null;
+                        RemovePossibleMovement();
+                    }
+                    white = !white;
+                }
+                else if (hit.transform.tag == "PlayerPawn" && selectedPawn != null)
+                {
+                    var hitted = hit.transform.GetComponent<Pawn>();
+                    var tile = board.tiles[hitted.XPositionOnBoard, hitted.YPositionOnBoard].GetComponent<Tile>();
+                    if (tile.EnableMove == true)
+                    {
+                        board.pawns[tile.x, tile.y] = selectedPawn;
+                        board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
+                        board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
+                        board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
+                        board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
+                        selectedPawn = null;
+                        RemovePossibleMovement();
+                    }
+                    white = !white;
                 }
                 else
                 {
