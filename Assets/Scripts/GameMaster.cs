@@ -39,6 +39,21 @@ public class GameMaster : MonoBehaviour
                         RemovePossibleMovement();
                     }
                 }
+                else if(hit.transform.tag == "BlackPawn" && selectedPawn != null)
+                {
+                    var hitted = hit.transform.GetComponent<Pawn>();
+                    var tile = board.tiles[hitted.XPositionOnBoard, hitted.YPositionOnBoard].GetComponent<Tile>();
+                    if (tile.EnableMove == true)
+                    {
+                        board.pawns[tile.x, tile.y] = selectedPawn;
+                        board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
+                        board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
+                        board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
+                        board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
+                        selectedPawn = null;
+                        RemovePossibleMovement();
+                    }
+                }
                 else
                 {
                     selectedPawn = null;
