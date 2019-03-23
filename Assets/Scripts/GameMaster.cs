@@ -39,6 +39,13 @@ public class GameMaster : MonoBehaviour
                     var tile = hit.transform.GetComponent<Tile>();
                     if(tile.EnableMove == true)
                     {
+                        //destroy enemy pawn
+                        if(board.pawns[tile.x, tile.y] != null)
+                        {
+                            Destroy(board.pawns[tile.x, tile.y].gameObject);
+                        }
+
+                        //move pawn
                         board.pawns[tile.x, tile.y] = selectedPawn;
                         board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
@@ -46,15 +53,21 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
                         selectedPawn = null;
                         RemovePossibleMovement();
+                        white = !white;
                     }
-                    white = !white;
                 }
                 else if(hit.transform.tag == "BlackPawn" && selectedPawn != null)
                 {
-                    var hitted = hit.transform.GetComponent<Pawn>();
-                    var tile = board.tiles[hitted.XPositionOnBoard, hitted.YPositionOnBoard].GetComponent<Tile>();
+                    Pawn hitted = hit.transform.GetComponent<Pawn>();
+                    Tile tile = board.tiles[hitted.YPositionOnBoard, hitted.XPositionOnBoard].GetComponent<Tile>();
                     if (tile.EnableMove == true)
                     {
+                        //destroy enemy pawn
+                        if (board.pawns[tile.x, tile.y] != null)
+                        {
+                            Destroy(board.pawns[tile.x, tile.y].gameObject);
+                        }
+
                         board.pawns[tile.x, tile.y] = selectedPawn;
                         board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
@@ -62,8 +75,8 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
                         selectedPawn = null;
                         RemovePossibleMovement();
+                        white = !white;
                     }
-                    white = !white;
                 }
                 else
                 {
@@ -92,6 +105,12 @@ public class GameMaster : MonoBehaviour
                     var tile = hit.transform.GetComponent<Tile>();
                     if (tile.EnableMove == true)
                     {
+                        //destroy enemy pawn
+                        if (board.pawns[tile.x, tile.y] != null)
+                        {
+                            Destroy(board.pawns[tile.x, tile.y].gameObject);
+                        }
+
                         board.pawns[tile.x, tile.y] = selectedPawn;
                         board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
@@ -99,15 +118,21 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
                         selectedPawn = null;
                         RemovePossibleMovement();
+                        white = !white;
                     }
-                    white = !white;
                 }
                 else if (hit.transform.tag == "PlayerPawn" && selectedPawn != null)
                 {
-                    var hitted = hit.transform.GetComponent<Pawn>();
-                    var tile = board.tiles[hitted.XPositionOnBoard, hitted.YPositionOnBoard].GetComponent<Tile>();
+                    Pawn hitted = hit.transform.GetComponent<Pawn>();
+                    Tile tile = board.tiles[hitted.YPositionOnBoard, hitted.XPositionOnBoard].GetComponent<Tile>();
                     if (tile.EnableMove == true)
                     {
+                        //destroy enemy pawn
+                        if (board.pawns[tile.x, tile.y] != null)
+                        {
+                            Destroy(board.pawns[tile.x, tile.y].gameObject);
+                        }
+
                         board.pawns[tile.x, tile.y] = selectedPawn;
                         board.pawns[selectedPawn.XPositionOnBoard, selectedPawn.YPositionOnBoard] = null;
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
@@ -115,8 +140,8 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
                         selectedPawn = null;
                         RemovePossibleMovement();
+                        white = !white;
                     }
-                    white = !white;
                 }
                 else
                 {
