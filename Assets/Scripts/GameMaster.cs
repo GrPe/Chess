@@ -21,6 +21,7 @@ public class GameMaster : MonoBehaviour
             {
                 if(hit.transform.tag == "PlayerPawn")
                 {
+                    if (selectedPawn != null) RemovePossibleMovement();
                     selectedPawn = hit.transform.GetComponent<Pawn>();
                     DrawPossibleMovement();
                 }
