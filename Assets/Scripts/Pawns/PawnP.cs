@@ -31,7 +31,8 @@ public class PawnP : Pawn
             //attack left
             if (XPositionOnBoard - 1 >= 0 && YPositionOnBoard - 1 >= 0)
             {
-                if (pawns[XPositionOnBoard - 1, YPositionOnBoard - 1] != null)
+                if (pawns[XPositionOnBoard - 1, YPositionOnBoard - 1] != null &&
+                    !pawns[XPositionOnBoard - 1, YPositionOnBoard - 1].isWhite)
                 {
                     possibleMoves[XPositionOnBoard - 1, YPositionOnBoard - 1] = true;
                 }
@@ -40,7 +41,8 @@ public class PawnP : Pawn
             //attack right
             if (XPositionOnBoard - 1 >= 0 && YPositionOnBoard + 1 < 8)
             {
-                if (pawns[XPositionOnBoard - 1, YPositionOnBoard + 1] != null)
+                if (pawns[XPositionOnBoard - 1, YPositionOnBoard + 1] != null &&
+                    !pawns[XPositionOnBoard - 1, YPositionOnBoard + 1].isWhite)
                 {
                     possibleMoves[XPositionOnBoard - 1, YPositionOnBoard + 1] = true;
                 }
@@ -72,7 +74,8 @@ public class PawnP : Pawn
             //attack left
             if (XPositionOnBoard + 1 >= 0 && YPositionOnBoard - 1 >= 0)
             {
-                if (pawns[XPositionOnBoard + 1, YPositionOnBoard - 1] != null)
+                if (pawns[XPositionOnBoard + 1, YPositionOnBoard - 1] != null &&
+                    pawns[XPositionOnBoard + 1, YPositionOnBoard - 1].isWhite)
                 {
                     possibleMoves[XPositionOnBoard + 1, YPositionOnBoard - 1] = true;
                 }
@@ -81,7 +84,8 @@ public class PawnP : Pawn
             //attack right
             if (XPositionOnBoard + 1 >= 0 && YPositionOnBoard + 1 < 8)
             {
-                if (pawns[XPositionOnBoard + 1, YPositionOnBoard + 1] != null)
+                if (pawns[XPositionOnBoard + 1, YPositionOnBoard + 1] != null &&
+                    pawns[XPositionOnBoard + 1, YPositionOnBoard + 1].isWhite)
                 {
                     possibleMoves[XPositionOnBoard + 1, YPositionOnBoard + 1] = true;
                 }
