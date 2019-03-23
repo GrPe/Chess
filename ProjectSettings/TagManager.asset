@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerPawn
   - FreeTile
+  - BlackPawn
   layers:
   - Default
   - TransparentFX

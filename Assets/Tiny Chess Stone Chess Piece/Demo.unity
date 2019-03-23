@@ -5921,13 +5921,13 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9351909, b: 0.80989677, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5941,7 +5941,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10204,6 +10204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eef405c088f7b449d8cad19bbf9aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTileMaterial: {fileID: 2100000, guid: b0077fdb4a76f33409d0709da8fc37bb,
+    type: 2}
+  emissiveTileMaterial: {fileID: 2100000, guid: 5e664ba107c529141889e6a1be246a65,
+    type: 2}
   board: {fileID: 1318477385}
 --- !u!4 &1613649506
 Transform:
@@ -10656,7 +10660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1736702598
 Transform:
   m_ObjectHideFlags: 0
@@ -11755,6 +11759,7 @@ GameObject:
   - component: {fileID: 1898824255}
   - component: {fileID: 1898824254}
   - component: {fileID: 1898824253}
+  - component: {fileID: 1898824257}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11834,6 +11839,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 57.813004, y: -135, z: 0}
+--- !u!114 &1898824257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898824252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 9f309562d2df14f4ca5e6ea92274a1d4, type: 2}
 --- !u!1 &1904031702
 GameObject:
   m_ObjectHideFlags: 0
@@ -13558,6 +13576,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6283344862513695662, guid: 77136acfcdb501d43a9d6a9ac271f76e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6283694829806748332, guid: 77136acfcdb501d43a9d6a9ac271f76e,
         type: 3}
       propertyPath: m_IsActive
       value: 0

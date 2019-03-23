@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
+    [SerializeField] private Material standardTileMaterial;
+    [SerializeField] private Material emissiveTileMaterial;
+
     [SerializeField] private Board board;
     private Pawn selectedPawn = null;
 
@@ -162,7 +165,7 @@ public class GameMaster : MonoBehaviour
             {
                 if(possibleMoves[j,i])
                 {
-                    board.tiles[i, j].GetComponent<MeshRenderer>().material.color = Color.green;
+                    board.tiles[i, j].GetComponent<MeshRenderer>().material = emissiveTileMaterial;
                     board.tiles[i, j].GetComponent<Tile>().EnableMove = true;
                 }
             }
@@ -176,7 +179,7 @@ public class GameMaster : MonoBehaviour
         {
             for (int j = 0; j < 8; j++)
             {
-                board.tiles[i, j].GetComponent<MeshRenderer>().material.color = Color.white;
+                board.tiles[i, j].GetComponent<MeshRenderer>().material = standardTileMaterial;
                 board.tiles[i, j].GetComponent<Tile>().EnableMove = false;
             }
         }
