@@ -394,10 +394,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4257197633913922}
-  - component: {fileID: 114614751238186594}
-  - component: {fileID: 397266283}
   - component: {fileID: 6937523550156674176}
   - component: {fileID: 5244346630838680654}
+  - component: {fileID: 4326799758451518227}
   m_Layer: 0
   m_Name: White Stone Queen
   m_TagString: PlayerPawn
@@ -430,30 +429,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114614751238186594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633224609000294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &397266283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633224609000294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6937523550156674176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -483,6 +458,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4326799758451518227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633224609000294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9e34b0df6e1e44d8608ca24ea1d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWhite: 1
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1725366035938186
 GameObject:
   m_ObjectHideFlags: 0

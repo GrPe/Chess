@@ -240,10 +240,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4323368450248646}
-  - component: {fileID: 114460754358522442}
-  - component: {fileID: 1582196568}
   - component: {fileID: 9072219456225440112}
   - component: {fileID: 8889524861789277038}
+  - component: {fileID: 720880083797609622}
   m_Layer: 0
   m_Name: White Stone Bishop
   m_TagString: PlayerPawn
@@ -273,30 +272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114460754358522442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353652469814562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1582196568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353652469814562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &9072219456225440112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -326,6 +301,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.5810049, z: 1}
   m_Center: {x: 0, y: 1.2747728, z: 0}
+--- !u!114 &720880083797609622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353652469814562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f417b8820a6fc4345baa3ada6d175992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWhite: 1
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1379846575488800
 GameObject:
   m_ObjectHideFlags: 0

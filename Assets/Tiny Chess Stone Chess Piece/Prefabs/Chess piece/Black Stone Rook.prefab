@@ -317,11 +317,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4843305581340572}
-  - component: {fileID: 114965733867477842}
-  - component: {fileID: 6920522291843178511}
-  - component: {fileID: 6648312808670998381}
   - component: {fileID: 4732935608099598270}
   - component: {fileID: 4718500788465982706}
+  - component: {fileID: 962167085828933224}
   m_Layer: 0
   m_Name: Black Stone Rook
   m_TagString: Untagged
@@ -349,42 +347,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114965733867477842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562622190837322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6920522291843178511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562622190837322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6648312808670998381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562622190837322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &4732935608099598270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -414,6 +376,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &962167085828933224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562622190837322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5204baa34000044b03443deaf67499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWhite: 0
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1696893368774660
 GameObject:
   m_ObjectHideFlags: 0

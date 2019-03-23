@@ -240,11 +240,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4964487031023218}
-  - component: {fileID: 114870784513405432}
   - component: {fileID: 5822497301253321356}
   - component: {fileID: 4791279143359077359}
-  - component: {fileID: 7098909223767159069}
-  - component: {fileID: 9041394019604676374}
+  - component: {fileID: 8806187649723349742}
   m_Layer: 0
   m_Name: Black Stone Bishop
   m_TagString: Untagged
@@ -274,18 +272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114870784513405432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239270685352430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &5822497301253321356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -315,7 +301,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7098909223767159069
+--- !u!114 &8806187649723349742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,21 +310,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1239270685352430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
+  m_Script: {fileID: 11500000, guid: f417b8820a6fc4345baa3ada6d175992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9041394019604676374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239270685352430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  isWhite: 0
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1474080326116580
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public void OnSelect()
+    public Vector3 GetPosition()
     {
-        Debug.Log("Selected: " + gameObject.name);
-    }
-
-    public void OnDiselect()
-    {
-        Debug.Log("Diselected: " + gameObject.name);
+        return transform.position;
     }
 
     public void Move(Vector3 position)

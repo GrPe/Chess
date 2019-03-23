@@ -4,10 +4,17 @@ using UnityEngine;
 
 public enum PawnType
 {
-    King,
-    Rook,
-    Bishop,
-    Queen,
-    Knight,
-    Pawn
+    WhiteKing,
+    WhiteRook,
+    WhiteBishop,
+    WhiteQueen,
+    WhiteKnight,
+    WhitePawn,
+
+    BlackKing,
+    BlackRook,
+    BlackBishop,
+    BlackQueen,
+    BlackKnight,
+    BlackPawn
 }

@@ -394,11 +394,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4042713662253092}
-  - component: {fileID: 114259098152100280}
   - component: {fileID: 4319991761545458364}
   - component: {fileID: 5239576128656118150}
-  - component: {fileID: 2662541196088654636}
-  - component: {fileID: 993977095291918072}
+  - component: {fileID: 4317233632841539591}
   m_Layer: 0
   m_Name: Black Stone Queen
   m_TagString: Untagged
@@ -431,18 +429,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114259098152100280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430682043930404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &4319991761545458364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -472,7 +458,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.5770931, z: 1}
   m_Center: {x: 0, y: 1.2821612, z: 0}
---- !u!114 &2662541196088654636
+--- !u!114 &4317233632841539591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -481,21 +467,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430682043930404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9e34b0df6e1e44d8608ca24ea1d342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &993977095291918072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430682043930404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  isWhite: 0
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1562578648140206
 GameObject:
   m_ObjectHideFlags: 0

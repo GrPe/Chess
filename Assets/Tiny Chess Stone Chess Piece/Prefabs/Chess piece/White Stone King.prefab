@@ -240,10 +240,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4595559095916412}
-  - component: {fileID: 114316313935980286}
-  - component: {fileID: 1060405983}
   - component: {fileID: 8426824231505152021}
   - component: {fileID: 4131176913727434461}
+  - component: {fileID: 6159582922300212049}
   m_Layer: 0
   m_Name: White Stone King
   m_TagString: PlayerPawn
@@ -274,30 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114316313935980286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233361812545480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1060405983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233361812545480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &8426824231505152021
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -327,6 +302,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.677737, z: 1}
   m_Center: {x: 0, y: 1.3413912, z: 0}
+--- !u!114 &6159582922300212049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233361812545480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00dc3305d2c8134387cc3e45af79f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWhite: 1
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1310918101033166
 GameObject:
   m_ObjectHideFlags: 0

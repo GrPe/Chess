@@ -317,11 +317,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4505852727375384}
-  - component: {fileID: 114268928683496150}
-  - component: {fileID: 5721755232664094446}
-  - component: {fileID: 2743850368641338156}
   - component: {fileID: 1925072244776883407}
   - component: {fileID: 5916557733008526573}
+  - component: {fileID: 7235749193825657249}
   m_Layer: 0
   m_Name: Black Stone Horse
   m_TagString: Untagged
@@ -349,42 +347,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114268928683496150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564033256009494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5721755232664094446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564033256009494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62654f9515d7e04d9caacd3c7ccd8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2743850368641338156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564033256009494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4027ac239e37b614a86474e95c315ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1925072244776883407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -414,6 +376,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9053953, z: 1}
   m_Center: {x: 0, y: 0.92566836, z: 0}
+--- !u!114 &7235749193825657249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564033256009494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5717a18b21a044a925b37b1762525d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWhite: 0
+  XPositionOnBoard: 0
+  YPositionOnBoard: 0
 --- !u!1 &1571599614973920
 GameObject:
   m_ObjectHideFlags: 0
