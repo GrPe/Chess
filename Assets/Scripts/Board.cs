@@ -69,6 +69,8 @@ public class Board : MonoBehaviour
     {
         pawns = new Pawn[8, 8];
 
+        FillWithNull(pawns);
+
         //black - first line
         pawns[0, 0] = Instantiate(BlackRook, transform.position + new Vector3(0 * xOffset, 0, 0 * yOffset), Quaternion.identity, transform).GetComponent<Rook>();
         pawns[0, 1] = Instantiate(BlackKnight, transform.position + new Vector3(1 * xOffset, 0, 0 * yOffset), Quaternion.identity, transform).GetComponent<Knight>();
@@ -107,5 +109,16 @@ public class Board : MonoBehaviour
         pawns[7, 7] = Instantiate(WhiteRook, transform.position + new Vector3(7 * xOffset, 0, 7 * yOffset), Quaternion.identity, transform).GetComponent<Rook>();
         for (int i = 0; i < 8; i++) { pawns[7, i].XPositionOnBoard = 7; pawns[7, i].YPositionOnBoard = i; }
 
+    }
+
+    private void FillWithNull(Pawn[,] pawns)
+    {
+        for(int i = 0; i < pawns.GetLength(0); i++)
+        {
+            for(int j = 0; j < pawns.GetLength(1); j++)
+            {
+                pawns[i, j] = null;
+            }
+        }
     }
 }

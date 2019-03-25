@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class AI
 {
-    static int Minimax(Board board, int depth, bool isMax)
+    static int Minimax(Board board, int depth, bool isMax, int alpha, int beta)
     {
         if (depth == 0) return Evaluate(board);
 
@@ -22,7 +22,8 @@ public static class AI
             board.pawns[move.ToX, move.ToY].YPositionOnBoard = move.ToY;
 
             //minimax
-            int moveVal = isMax ? Mathf.Max(bestVal, Minimax(board, depth - 1, !isMax)) : Mathf.Min(bestVal, Minimax(board, depth -1, !isMax));
+            bestVal = isMax ? Mathf.Max(bestVal, Minimax(board, depth - 1, !isMax, alpha, beta)) : Mathf.Min(bestVal, Minimax(board, depth -1, !isMax, alpha, beta));
+
 
             //undo movement
             board.pawns[move.FromX, move.FromY] = board.pawns[move.ToX, move.ToY];
@@ -30,11 +31,13 @@ public static class AI
             board.pawns[move.FromX, move.FromY].XPositionOnBoard = move.FromX;
             board.pawns[move.FromX, move.FromY].YPositionOnBoard = move.FromY;
 
-            //check best move
-            if (moveVal > bestVal)
-            {
-                bestVal = moveVal;
-            }
+            //alfa - beta optimization
+            if (isMax)
+                alpha = Mathf.Max(alpha, bestVal);
+            else
+                beta = Mathf.Min(beta, bestVal);
+
+            if (beta <= alpha) break;
         }
 
         return bestVal;
@@ -57,7 +60,7 @@ public static class AI
             board.pawns[move.ToX, move.ToY].YPositionOnBoard = move.ToY;
 
             //minimax
-            int moveVal = Evaluate(board);//Minimax(board, 2, false);
+            int moveVal = Minimax(board, 3, false, int.MinValue, int.MaxValue);
 
             //undo movement
             board.pawns[move.FromX, move.FromY] = board.pawns[move.ToX, move.ToY];
@@ -88,7 +91,6 @@ public static class AI
             {
                 if (board.pawns[i, j] != null)
                 {
-                    
                     if (board.pawns[i, j] is PawnP)
                     {
                         if (board.pawns[i, j].tag == "BlackPawn") score += 10;
@@ -108,7 +110,6 @@ public static class AI
                     }
                     else if(board.pawns[i, j] is King)
                     {
-                        Debug.Log("Find King");
                         if (board.pawns[i, j].tag == "BlackPawn") score += 4000;
                         else score -= 4000;
                     }
