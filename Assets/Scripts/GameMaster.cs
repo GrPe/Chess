@@ -15,21 +15,36 @@ public class GameMaster : MonoBehaviour
 
     private void Update()
     {
-        if(white)
+        if (white)
         {
             PlayerWhiteSelect();
         }
-        else if (!enemyThinking)
+        else if(Config.isMultiplayer)
         {
-            enemyThinking = true;
-            Move move = AI.FindBestMove(board);
-            AIMove(move);
-            //BlackPlayerSelect();
+            if (!enemyThinking)
+            {
+                enemyThinking = true;
+                Move move = AI.FindBestMove(board);
+                AIMove(move);
+            }
         }
-        //else 
-        //{
-        //    BlackPlayerSelect();
-        //}
+        else
+        {
+            BlackPlayerSelect();
+        }
+    }
+
+    private void WinnerCheck()
+    {
+        int result = AI.Evaluate(board);
+        if(result > 3000)
+        {
+            //white win
+        }
+        else if (result < -3000)
+        {
+            //black win
+        }
     }
 
     private void AIMove(Move move)

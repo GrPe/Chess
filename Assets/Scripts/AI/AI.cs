@@ -60,7 +60,7 @@ public static class AI
             board.pawns[move.ToX, move.ToY].YPositionOnBoard = move.ToY;
 
             //minimax
-            int moveVal = Minimax(board, 4, false, int.MinValue, int.MaxValue);
+            int moveVal = Minimax(board, 3, false, int.MinValue, int.MaxValue);
 
             //undo movement
             board.pawns[move.FromX, move.FromY] = board.pawns[move.ToX, move.ToY];
