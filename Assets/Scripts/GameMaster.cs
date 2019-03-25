@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
+    [SerializeField] private UIController uiController;
+
     [SerializeField] private Material standardTileMaterial;
     [SerializeField] private Material emissiveTileMaterial;
 
@@ -26,6 +28,7 @@ public class GameMaster : MonoBehaviour
                 enemyThinking = true;
                 Move move = AI.FindBestMove(board);
                 AIMove(move);
+                uiController.SetWhiteVisible();
             }
         }
         else
@@ -99,6 +102,7 @@ public class GameMaster : MonoBehaviour
                         selectedPawn = null;
                         RemovePossibleMovement();
                         white = !white;
+                        uiController.SetBlackVisible();
                     }
                 }
                 else if(hit.transform.tag == "BlackPawn" && selectedPawn != null)
@@ -121,6 +125,7 @@ public class GameMaster : MonoBehaviour
                         selectedPawn = null;
                         RemovePossibleMovement();
                         white = !white;
+                        uiController.SetBlackVisible();
                     }
                 }
                 else
@@ -164,6 +169,7 @@ public class GameMaster : MonoBehaviour
                         selectedPawn = null;
                         RemovePossibleMovement();
                         white = !white;
+                        uiController.SetWhiteVisible();
                     }
                 }
                 else if (hit.transform.tag == "PlayerPawn" && selectedPawn != null)
@@ -186,6 +192,7 @@ public class GameMaster : MonoBehaviour
                         selectedPawn = null;
                         RemovePossibleMovement();
                         white = !white;
+                        uiController.SetWhiteVisible();
                     }
                 }
                 else
