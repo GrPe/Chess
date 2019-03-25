@@ -8,30 +8,8 @@ public class Queen : Pawn
     {
         bool[,] possibleMoves = new bool[8, 8];
 
-        #region King
-        int i = XPositionOnBoard - 1;
-        int j = YPositionOnBoard - 1;
-
-        for (; i <= XPositionOnBoard + 1; i++)
-        {
-            if (i > 7 || i < 0) continue;
-            for (j = YPositionOnBoard - 1; j <= YPositionOnBoard + 1; j++)
-            {
-                if (j > 7 || j < 0) continue;
-                if (pawns[i, j] == null)
-                {
-                    possibleMoves[i, j] = true;
-                }
-                else
-                {
-                    if (pawns[i, j].isWhite != isWhite)
-                    {
-                        possibleMoves[i, j] = true;
-                    }
-                }
-            }
-        }
-        #endregion
+        int i = 0;
+        int j = 0;
 
         #region Bishop
         //left-up

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Tiny Chess Stone Chess Piece/Demo.unity
+    guid: 46410c3e9e9919043bed62934e10c5f4
   m_configObjects: {}
