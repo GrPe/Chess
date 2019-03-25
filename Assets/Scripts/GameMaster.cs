@@ -42,11 +42,11 @@ public class GameMaster : MonoBehaviour
         int result = AI.Evaluate(board);
         if(result > 3000)
         {
-            //white win
+            uiController.EndGame(false); //black win
         }
         else if (result < -3000)
         {
-            //black win
+            uiController.EndGame(true); //white win
         }
     }
 
@@ -67,6 +67,7 @@ public class GameMaster : MonoBehaviour
 
         white = !white;
         enemyThinking = false;
+        WinnerCheck();
     }
 
     private void PlayerWhiteSelect()
@@ -103,6 +104,7 @@ public class GameMaster : MonoBehaviour
                         RemovePossibleMovement();
                         white = !white;
                         uiController.SetBlackVisible();
+                        WinnerCheck();
                     }
                 }
                 else if(hit.transform.tag == "BlackPawn" && selectedPawn != null)
@@ -126,6 +128,7 @@ public class GameMaster : MonoBehaviour
                         RemovePossibleMovement();
                         white = !white;
                         uiController.SetBlackVisible();
+                        WinnerCheck();
                     }
                 }
                 else
@@ -170,6 +173,7 @@ public class GameMaster : MonoBehaviour
                         RemovePossibleMovement();
                         white = !white;
                         uiController.SetWhiteVisible();
+                        WinnerCheck();
                     }
                 }
                 else if (hit.transform.tag == "PlayerPawn" && selectedPawn != null)
@@ -193,6 +197,7 @@ public class GameMaster : MonoBehaviour
                         RemovePossibleMovement();
                         white = !white;
                         uiController.SetWhiteVisible();
+                        WinnerCheck();
                     }
                 }
                 else
