@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour
     private Pawn selectedPawn = null;
 
     private bool white = true;
+    private bool enemyThinking = false;
 
     private void Update()
     {
@@ -18,10 +19,32 @@ public class GameMaster : MonoBehaviour
         {
             PlayerWhiteSelect();
         }
-        else
+        else if(!enemyThinking)
         {
-            BlackPlayerSelect();
+            enemyThinking = true;
+            Move move = AI.FindBestMove(board);
+            AIMove(move);
+            //BlackPlayerSelect();
         }
+    }
+
+    private void AIMove(Move move)
+    {
+        //destroy
+        if(board.pawns[move.ToX, move.ToY] != null)
+        {
+            Destroy(board.pawns[move.ToX, move.ToY].gameObject);
+        }
+
+        //move
+        board.pawns[move.ToX, move.ToY] = board.pawns[move.FromX, move.FromY];
+        board.pawns[move.FromX, move.FromY] = null;
+        board.pawns[move.ToX, move.ToY].XPositionOnBoard = move.ToX;
+        board.pawns[move.ToX, move.ToY].YPositionOnBoard = move.ToY;
+        board.pawns[move.ToX, move.ToY].SetPosition(board.tiles[move.ToY, move.ToX].transform.position);
+
+        white = !white;
+        enemyThinking = false;
     }
 
     private void PlayerWhiteSelect()
@@ -185,3 +208,4 @@ public class GameMaster : MonoBehaviour
         }
     }
 }
+    
