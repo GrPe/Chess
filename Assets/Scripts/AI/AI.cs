@@ -57,7 +57,7 @@ public static class AI
             board.pawns[move.ToX, move.ToY].YPositionOnBoard = move.ToY;
 
             //minimax
-            int moveVal = Minimax(board, 4, false);
+            int moveVal = Minimax(board, 2, false);
 
             //undo movement
             board.pawns[move.FromX, move.FromY] = board.pawns[move.ToX, move.ToY];
@@ -78,9 +78,46 @@ public static class AI
 
 
 
-    static int Evaluate(Board board)
+    public static int Evaluate(Board board)
     {
-        return -100;
+        int score = 0;
+
+        for(int i = 0; i < 8; i++)
+        {
+            for(int j = 0; j < 8; j++)
+            {
+                if (board.pawns[i, j] != null)
+                {
+                    
+                    if (board.pawns[i, j] is PawnP)
+                    {
+                        if (board.pawns[i, j].tag == "BlackPawn") score += 10;
+                        else score -= 10;
+                    }
+                    else if (board.pawns[i, j] is Bishop ||
+                             board.pawns[i, j] is Rook ||
+                             board.pawns[i, j] is Knight)
+                    {
+                        if (board.pawns[i, j].tag == "BlackPawn") score += 30;
+                        else score -= 30;
+                    }
+                    else if (board.pawns[i, j] is Queen)
+                    {
+                        if (board.pawns[i, j].tag == "BlackPawn") score += 100;
+                        else score -= 100;
+                    }
+                    else if(board.pawns[i, j] is King)
+                    {
+                        Debug.Log("Find King");
+                        if (board.pawns[i, j].tag == "BlackPawn") score += 4000;
+                        else score -= 4000;
+                    }
+                }
+                
+            }
+        }
+
+        return score;
     }
 
     private static List<Move> GetAllPossibleMoves(Board board, bool isBlack)

@@ -19,13 +19,17 @@ public class GameMaster : MonoBehaviour
         {
             PlayerWhiteSelect();
         }
-        else if(!enemyThinking)
+        else if (!enemyThinking)
         {
             enemyThinking = true;
             Move move = AI.FindBestMove(board);
             AIMove(move);
             //BlackPlayerSelect();
         }
+        //else 
+        //{
+        //    BlackPlayerSelect();
+        //}
     }
 
     private void AIMove(Move move)
