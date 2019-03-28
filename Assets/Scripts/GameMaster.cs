@@ -37,6 +37,41 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    private void PromotePawns()
+    {
+        for(int i = 0; i < 8; ++i)
+        {
+            for(int j = 0; j < 8; j++)
+            {
+                if (board.pawns[i, j] != null &&  board.pawns[i, j] is PawnP)
+                {
+                    if (board.pawns[i, j].tag == "PlayerPawn" && i == 0)
+                    {
+                        Vector3 position = board.pawns[i, j].transform.position;
+                        Destroy(board.pawns[i, j].gameObject);
+                        board.InstantiateQueen(position, true, i, j);
+                    }
+                    else if (board.pawns[i, j].tag == "BlackPawn" && i == 7)
+                    {
+                        Vector3 position = board.pawns[i, j].transform.position;
+                        Destroy(board.pawns[i, j].gameObject);
+                        board.InstantiateQueen(position, false, i, j);
+                    }
+                }
+            }
+        }
+    }
+
+    private void EndOfMove()
+    {
+        PromotePawns();
+        selectedPawn = null;
+        RemovePossibleMovement();
+        white = !white;
+        uiController.SetBlackVisible();
+        WinnerCheck();
+    }
+
     private void WinnerCheck()
     {
         int result = AI.Evaluate(board);
@@ -65,9 +100,8 @@ public class GameMaster : MonoBehaviour
         board.pawns[move.ToX, move.ToY].YPositionOnBoard = move.ToY;
         board.pawns[move.ToX, move.ToY].SetPosition(board.tiles[move.ToY, move.ToX].transform.position);
 
-        white = !white;
+        EndOfMove();
         enemyThinking = false;
-        WinnerCheck();
     }
 
     private void PlayerWhiteSelect()
@@ -100,11 +134,7 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
                         board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
-                        selectedPawn = null;
-                        RemovePossibleMovement();
-                        white = !white;
-                        uiController.SetBlackVisible();
-                        WinnerCheck();
+                        EndOfMove();
                     }
                 }
                 else if(hit.transform.tag == "BlackPawn" && selectedPawn != null)
@@ -124,11 +154,7 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
                         board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
-                        selectedPawn = null;
-                        RemovePossibleMovement();
-                        white = !white;
-                        uiController.SetBlackVisible();
-                        WinnerCheck();
+                        EndOfMove();
                     }
                 }
                 else
@@ -169,11 +195,7 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
                         board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
-                        selectedPawn = null;
-                        RemovePossibleMovement();
-                        white = !white;
-                        uiController.SetWhiteVisible();
-                        WinnerCheck();
+                        EndOfMove();
                     }
                 }
                 else if (hit.transform.tag == "PlayerPawn" && selectedPawn != null)
@@ -193,11 +215,7 @@ public class GameMaster : MonoBehaviour
                         board.pawns[tile.x, tile.y].SetPosition(tile.transform.position);
                         board.pawns[tile.x, tile.y].XPositionOnBoard = tile.x;
                         board.pawns[tile.x, tile.y].YPositionOnBoard = tile.y;
-                        selectedPawn = null;
-                        RemovePossibleMovement();
-                        white = !white;
-                        uiController.SetWhiteVisible();
-                        WinnerCheck();
+                        EndOfMove();
                     }
                 }
                 else

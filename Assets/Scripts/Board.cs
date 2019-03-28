@@ -37,6 +37,22 @@ public class Board : MonoBehaviour
         SpawnPawns();
     }
 
+    public void InstantiateQueen(Vector3 position, bool isWhite, int x, int y)
+    {
+        if (isWhite)
+        {
+            pawns[x, y] = Instantiate(WhiteQueen, position, Quaternion.identity).GetComponent<Queen>();
+            pawns[x, y].XPositionOnBoard = x;
+            pawns[x, y].YPositionOnBoard = y;
+        }
+        else
+        {
+            pawns[x, y] = Instantiate(BlackQueen, position, Quaternion.identity).GetComponent<Queen>();
+            pawns[x, y].XPositionOnBoard = x;
+            pawns[x, y].YPositionOnBoard = y;
+        }
+    }
+
     private void SpawnTiles()
     {
         bool whiteToSpawn = true;
