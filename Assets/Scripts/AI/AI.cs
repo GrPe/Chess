@@ -69,7 +69,7 @@ public static class AI
             board.pawns[move.FromX, move.FromY].YPositionOnBoard = move.FromY;
 
             //check best move
-            if (moveVal > bestVal)
+            if (moveVal >= bestVal)
             {
                 bestMove = move;
                 bestVal = moveVal;
